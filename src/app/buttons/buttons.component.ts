@@ -18,7 +18,7 @@ export class ButtonsComponent implements OnInit {
   }
 
   startVM() {
-    this.http.post(this.getUrl, this.VMInfo).subscribe(something => console.log(something));
+    this.http.post(this.startUrl, this.VMInfo).subscribe(something => console.log(something));
     console.log("Start");
   }
 
