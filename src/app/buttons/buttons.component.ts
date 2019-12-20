@@ -7,11 +7,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ButtonsComponent implements OnInit {
 
-  private startUrl = 'https://startstopj.azurewebsites.net/api/Start?code=QTunwb7Pe2h6ccOn4agxjhkvnNiskljWuEiDpHOar5rVagXYzbhfDA==';
-  private stopUrl = 'https://startstopj.azurewebsites.net/api/Stop?code=J6pbZ7O6T8ToM9e7uszaqyMmurSYfkoNwDoefgZHhecKmgjaFS2Lbg==';
-  private getUrl = 'https://startstopj.azurewebsites.net/api/GetVM?code=SNookVpk4j/6Ru4jR8swBiegQC60Cay0/c8lOFkzn/GUgwk1yGS9Tw==';
+  /**Please. fill with the function URL**/
+  private startUrl = 'Start URL here';
 
-  private VMInfo = {vmname: 'VMTesting', resourcegroup: 'FEDP-RG'};
+  /**Please. fill with the VM's information**/
+  private VMInfo = {vmname: 'VM name', resourcegroup: 'VM Resource group'};
+
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
@@ -22,8 +23,5 @@ export class ButtonsComponent implements OnInit {
     console.log("Start");
   }
 
-  stopVM() {
-    this.http.post(this.stopUrl, this.VMInfo).subscribe(something => console.log(something));
-    console.log("Stop");
-  }
+  /**Here you can create a stop function**/
 }
