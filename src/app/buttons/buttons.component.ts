@@ -7,11 +7,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ButtonsComponent implements OnInit {
 
-  /**Please. fill with the function URL**/
-  private startUrl = 'Start URL here';
+  /**Please. fill with the function Start URL**/
+  private startUrl = 'https://lrichard-functionapp.azurewebsites.net/api/Start';
+
+  /**Please. fill with the function Stop URL**/
+  private stopUrl = 'https://lrichard-functionapp.azurewebsites.net/api/Stop';
 
   /**Please. fill with the VM's information**/
-  private VMInfo = {vmname: 'VM name', resourcegroup: 'VM Resource group'};
+  private VMInfo = {vmname: 'lrichard-VMv2', resourcegroup: 'lrichard-Angular-FunctionDevLabTest2'};
 
   constructor(private http: HttpClient) { }
 
@@ -23,5 +26,9 @@ export class ButtonsComponent implements OnInit {
     console.log("Start");
   }
 
+  stopVM() {
+    this.http.post(this.stopUrl, this.VMInfo).subscribe(something => console.log(something));
+    console.log("Stop");
+  }
   /**Here you can create a stop function**/
 }
